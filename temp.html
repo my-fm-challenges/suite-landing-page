@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .testimonial {
+        /* Все размеры, от которых зависит нахлёст, в одном месте */
+        --photo: clamp(10rem, 45vw, 14rem); /* ширина фото, резиновая */
+        --overlap: calc(var(--photo) * 0.6); /* нахлёст ПРОПОРЦИОНАЛЕН фото, а не магическое число */
+        --card-bg: oklch(25% 0.05 265);
+        --glow: oklch(45% 0.18 300);
+
+        max-inline-size: 26rem;
+        margin: var(--overlap) auto 0; /* место сверху под торчащее фото */
+        padding: 0 2rem 2.5rem;
+
+        display: grid;
+        justify-items: center;
+        gap: 1.25rem;
+        text-align: center;
+        color: oklch(98% 0 0);
+        border-radius: 0.75rem;
+
+        /* Свечение — это второй слой фона, а не отдельный div.
+     Слои background рисуются сверху вниз: первый слой лежит поверх второго. */
+        background: radial-gradient(circle 11rem at 50% 3rem, var(--glow), transparent), var(--card-bg);
+      }
+
+      .testimonial__photo {
+        inline-size: var(--photo);
+        block-size: auto; /* пропорции берутся из атрибутов width/height */
+        margin-block-start: calc(var(--overlap) * -1); /* вытягиваем вверх за край */
+
+        /* drop-shadow, а не box-shadow: тень повторяет АЛЬФА-КОНТУР PNG (силуэт),
+     а не прямоугольник картинки. Отсюда мягкий ореол вокруг головы. */
+        filter: drop-shadow(0 0 1.5rem oklch(80% 0.1 300 / 0.35));
+      }
+
+      .testimonial__curve {
+        inline-size: 2.5rem;
+        fill: none;
+        stroke: currentColor; /* цвет берётся из color родителя */
+        stroke-width: 1.5;
+        stroke-linecap: round;
+      }
+
+      .testimonial__title {
+        margin: 0;
+        font-size: clamp(1.75rem, 1.2rem + 2.5vw, 2.5rem); /* плавный размер без медиазапросов */
+        font-weight: 400;
+        text-wrap: balance; /* ровные строки заголовка */
+      }
+
+      .testimonial__title b {
+        font-weight: 700;
+      }
+
+      .testimonial__quote {
+        margin: 0;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: oklch(98% 0 0 / 0.8); /* альфа в цвете, а не opacity (opacity гасит ВСЁ, включая детей) */
+        text-wrap: pretty; /* без висячего одинокого слова в последней строке */
+        quotes: "“" "”";
+      }
+
+      .testimonial__quote p::before {
+        content: open-quote;
+      }
+
+      .testimonial__quote p::after {
+        content: close-quote;
+      }
+
+      .testimonial__author {
+        display: grid;
+        gap: 0.25rem;
+      }
+
+      .testimonial__name {
+        font-weight: 700;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+      
+      .testimonial__role {
+        font-size: 0.75rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: oklch(98% 0 0 / 0.6);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- figure + blockquote + figcaption — паттерн цитаты с атрибуцией прямо из спеки HTML -->
+    <figure class="testimonial">
+      <!-- width/height обязательны: браузер резервирует место до загрузки (нет CLS).
+       alt="" — имя человека и так есть в подписи; дублировать его скринридеру незачем -->
+      <img class="testimonial__photo" src="assets/image-jeremy-small.png" alt="" width="280" height="350" />
+
+      <!-- Чистая декорация: скрыта от a11y-дерева -->
+      <svg class="testimonial__curve" viewBox="0 0 40 24" aria-hidden="true">
+        <path d="M38 2 C 34 18, 20 22, 2 22" />
+      </svg>
+
+      <!-- <b>, а не <strong>: жирный здесь стилистический акцент, а не "важность".
+       Спорно, это дело вкуса, но аргумент такой. -->
+      <h2 class="testimonial__title">
+        It just
+        <b>works.</b>
+      </h2>
+
+      <blockquote class="testimonial__quote">
+        <p>I really like how it is an all-in-one solution that handle many of the tasks that you would normally need separate tools to do the same job. This thing is a miracle worker.</p>
+      </blockquote>
+
+      <!-- figcaption обязан быть первым или последним ребёнком figure -->
+      <figcaption class="testimonial__author">
+        <!-- НЕ : cite — это название произведения, а не имя человека.
+         Популярное заблуждение. -->
+        <span class="testimonial__name">Jeremy Robinson</span>
+        <span class="testimonial__role">CMO, Fylo</span>
+      </figcaption>
+    </figure>
+
+    <style></style>
+  </body>
+</html>
