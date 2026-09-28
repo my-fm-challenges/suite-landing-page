@@ -1,71 +1,78 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>REPEAT</title>
-    <style>
-      .testimonial {
-        background-color: antiquewhite;
-        border: 1px solid orangered;
 
-        --photo: clamp(10rem, 45vw, 14rem);
-        --overlap: calc(var(--photo) * 0.6);
-        --card-bg: oklch(25% 0.05 265);
-        --glow: oklch(45% 0.18 300);
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>REPEAT</title>
+  <style>
+    .testimonial {
 
-        max-inline-size: 26rem;
-        margin: var(--overlap) auto 0;
-        padding: 0 2rem 2.5rem;
 
-        display: grid;
-        justify-items: center;
-        gap: 1.25rem;
-        text-align: center;
-        color: oklch(98% 0 0);
-        border-radius: 12px;
+      --photo: clamp(10rem, 45vw, 14rem);
+      --overlap: calc(var(--photo) * 0.6);
+      --card-bg: oklch(25% 0.05 265);
+      --glow: oklch(45% 0.18 300);
 
-        background: radial-gradient(circle 11rem at 50% 3rem, var(--glow), transparent), var(--card-bg);
-      }
+      background-color: antiquewhite;
+      border: 1px solid orangered;
 
-      .testimonial__photo {
-        inline-size: var(--photo);
-        block-size: auto;
-        margin-block-start: calc(var(--overlap) * -1);
+      max-inline-size: 26rem;
+      margin: var(--overlap) auto 0;
+      padding: 0 2rem 2.5rem;
 
-        filter: drop-shadow(0 0 1.5rem oklch(80% 0.1 300 / 0.35));
-      }
+      display: grid;
+      justify-items: center;
+      gap: 1.25rem;
+      text-align: center;
+      color: oklch(98% 0 0);
+      border-radius: 12px;
 
-      .testimonial__curve {
-        inline-size: 4rem;
-        fill: none;
-        stroke: currentColor;
-        stroke-width: 2;
-        stroke-linecap: round;
-      }
-    </style>
-  </head>
-  <body>
-    <figure class="testimonial">
-      <img src="assets/image-jeremy-small.png" alt="" class="testimonial__photo" width="243" height="395" />
+      background: radial-gradient(circle 11rem at 50% 3rem, var(--glow), transparent), var(--card-bg);
+    }
 
-      <svg xmlns="http://www.w3.org/2000/svg" width="66" height="54" viewBox="0 0 66 54">
-        <path d="M64.2317 0.153564C64.2317 0.153564 57.85 41.4278 0.182838 52.1536" aria-hidden="true" class="testimonial__curve" />
-      </svg>
+    .testimonial__photo {
+      inline-size: var(--photo);
+      block-size: auto;
+      margin-block-start: calc(var(--overlap) * -1);
 
-      <h2 class="testimonail__title">
-        It just
-        <b>works.</b>
-      </h2>
+      filter: drop-shadow(0 0 1.5rem oklch(80% 0.1 300 / 0.35));
+    }
 
-      <blockquote class="testimonial__quote">
-        <p>I really like how it is an all-in-one solution that handle many of the tasks that you would normally need separate tools to do the same job. This thing is a miracle worker.</p>
-      </blockquote>
+    .testimonial__curve {
+      inline-size: 4rem;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+    }
+  </style>
+</head>
 
-      <figcaption class="testimonail__author">
-        <span class="testimonail__name">Jeremy Robinson</span>
-        <span class="testimonail__role">CMO, Fylo</span>
-      </figcaption>
-    </figure>
-  </body>
+<body>
+  <figure class="testimonial">
+    <img src="assets/image-jeremy-small.png" alt="" class="testimonial__photo" width="243" height="395" />
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="66" height="54" viewBox="0 0 66 54">
+      <path d="M64.2317 0.153564C64.2317 0.153564 57.85 41.4278 0.182838 52.1536" aria-hidden="true"
+        class="testimonial__curve" />
+    </svg>
+
+    <h2 class="testimonail__title">
+      It just
+      <b>works.</b>
+    </h2>
+
+    <blockquote class="testimonial__quote">
+      <p>I really like how it is an all-in-one solution that handle many of the tasks that you would normally need
+        separate tools to do the same job. This thing is a miracle worker.</p>
+    </blockquote>
+
+    <figcaption class="testimonail__author">
+      <span class="testimonail__name">Jeremy Robinson</span>
+      <span class="testimonail__role">CMO, Fylo</span>
+    </figcaption>
+  </figure>
+</body>
+
 </html>

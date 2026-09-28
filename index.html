@@ -1,16 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Suite landing page</title>
+  <link rel="stylesheet" href="style.css">
+
+  <title>Suite landing page</title>
+
 </head>
+
 <body>
 
-  Request Beta Access
+  <header class="header">
+    <img src="assets/logo.svg" alt="suite" class="header__logo">
+    <a href="#" class="button header__button">Request Beta Access</a>
+
+  </header>
+  <main>
+    <section class="hero">
+      <svg xmlns="http://www.w3.org/2000/svg" width="129" height="17" viewBox="0 0 129 17" aria-hidden="true">
+        <path d="M0.460449 15.2221C0.460449 15.2221 61.9093 -16.7779 128.016 15.2221" class="hero__curve" />
+      </svg>
+      <div class="hero__content">
+        <h1 class="hero__title">A <b>super solution</b> for your <b>business</b>.</h1>
+        <p class="hero__text">Our marketing and sales automations help you scale your outreach to get more leads for
+          your company. </p>
+        <a href="#" class="button hero__button">Request Beta Access</a>
+      </div>
+      <picture class="hero__picture">
+        <source srcset="assets/image-hero-portrait.png" media="(width >= 768px)" width="350" height="600">
+        <img src="assets/image-hero-landscape.png" alt="" class="hero__image" width="343" height="240">
+      </picture>
+      <ul class="hero__facts" role="list">
+        <li class="fact">
+          <span>2K+</span>
+          <span>COMPANIES</span>
+        </li>
+        <li class="fact">
+          <span class="fact__number">8</span>
+          <span class="fact__label">LANGUAGES</span>
+        </li>
+        <li class="fact">
+          <span>1.2M</span>
+          <span>LEADS</span>
+        </li>
+      </ul>
+
+    </section>
+
+    <figure class="testimonial">
+      <picture class="testimonial__picture">
+
+        <source srcset="assets/image-jeremy-large.png" media="(width >= 768px)" width="361" height="590">
+
+
+        <img src="assets/image-jeremy-small.png" alt="" class="testimonial__photo" width="243" height="395" />
+
+
+      </picture>
+
+      <svg xmlns="http://www.w3.org/2000/svg" width="66" height="54" viewBox="0 0 66 54" aria-hidden="true">
+        <path d="M64.2317 0.153564C64.2317 0.153564 57.85 41.4278 0.182838 52.1536" class="testimonial__curve" />
+      </svg>
+
+      <h2 class="testimonial__title">
+        It just
+        <b>works.</b>
+      </h2>
+
+      <blockquote class="testimonial__quote">
+        <p>I really like how it is an all-in-one solution that handle many of the tasks that you would normally need
+          separate tools to do the same job. This thing is a miracle worker.</p>
+      </blockquote>
+
+      <figcaption class="testimonial__author">
+        <span class="testimonial__name">Jeremy Robinson</span>
+        <span class="testimonial__role">CMO, Fylo</span>
+      </figcaption>
+    </figure>
+  </main>
+
+
+  <footer class="footer">
+    <img src="assets/logo.svg" alt="" class="footer__logo">
+    <small class="footer__copyright">Copyright - Suite</small>
+    <div class="footer__socials">
+      <img src="assets/icon-facebook.svg" alt="">
+      <img src="assets/icon-twitter.svg" alt="">
+      <img src="assets/icon-instagram.svg" alt="">
+    </div>
+
+  </footer>
+
+
+
+
+
+
+
+
+</body>
+
+</html>
+
+
+
+<!-- Request Beta Access
 
   A super solution for your business.
 
@@ -37,7 +135,4 @@
   Jeremy Robinson
   CMO, Fylo
 
-  Copyright - Suite
-
-</body>
-</html>
+  Copyright - Suite -->

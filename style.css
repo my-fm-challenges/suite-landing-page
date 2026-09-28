@@ -1,0 +1,101 @@
+ .testimonial {
+     --photo-max-inline-size: clamp(15.75rem, 13.3732rem + 10.1408vw, 22.5rem);
+     --photo-overhang: 130px;
+     --testimonial-max-inline-size: 1110px;
+
+     outline: 1px solid orangered;
+     max-inline-size: var(--testimonial-max-inline-size);
+     background-color: bisque;
+
+     display: grid;
+     grid-template-columns: 1fr;
+
+     margin: var(--photo-overhang) auto 0;
+ }
+
+ .testimonial__photo {
+     display: block;
+     inline-size: var(--photo-max-inline-size);
+     block-size: auto;
+
+     margin-block-start: calc(-1 * var(--photo-overhang));
+ }
+
+ @media (width >=1024px) {
+     .testimonial {
+         grid-template-columns: repeat(2, 1fr);
+     }
+
+     .testimonial__photo {
+         grid-area: 1/1;
+     }
+
+     .testimonial__body {
+         grid-area: 1/2;
+     }
+ }
+
+
+ @font-face {
+     font-display: swap;
+     font-family: 'Epilogue';
+     font-style: normal;
+     font-weight: 400;
+     src: url('fonts/epilogue-v20-latin-regular.woff2') format('woff2');
+ }
+
+ @font-face {
+     font-display: swap;
+     font-family: 'Epilogue';
+     font-style: normal;
+     font-weight: 700;
+     src: url('fonts/epilogue-v20-latin-700.woff2') format('woff2');
+ }
+
+
+
+ :root {
+     --clr-neutral-900: #172339;
+     --clr-neutral-500: #49566D;
+     --clr-neutral-200: #f3ede7;
+     --clr-neutral-0: #faf8f6;
+     --clr-eupatorium-purple-500: #cb30e3;
+
+     --light-gradient: linear-gradient(135deg, #A060FF 0%, #CB30E3 49.21%, #FFA84E 100%);
+
+
+     --spacing-0: 0;
+     --spacing-025: 2px;
+     --spacing-050: 4px;
+     --spacing-075: 6px;
+     --spacing-100: 8px;
+     --spacing-125: 10px;
+     --spacing-150: 12px;
+     --spacing-200: 16px;
+     --spacing-250: 20px;
+     --spacing-300: 24px;
+     --spacing-400: 32px;
+     --spacing-500: 40px;
+     --spacing-600: 48px;
+     --spacing-800: 64px;
+     --spacing-1000: 80px;
+
+     --radius-0: 0;
+     --radius-4: 4px;
+     --radius-6: 6px;
+     --radius-8: 8px;
+     --radius-10: 10px;
+     --radius-12: 12px;
+     --radius-16: 16px;
+     --radius-20: 20px;
+     --radius-24: 24px;
+     --radius-full: 999px;
+
+     --font-base: 'Epilogue', system-ui;
+
+
+ }
+
+ body {
+     font-family: var(--font-base);
+ }
